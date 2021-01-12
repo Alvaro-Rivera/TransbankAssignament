@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cl.alvaro.transbankapp">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Used to load images from the gallery content provider. -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- Used to load images for contact photos. -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:name=".MoviesApplication"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        tools:ignore="AllowBackup">
+        <activity
+            android:name=".moviedetail.MovieDetailActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            android:parentActivityName=".movielist.MovieListActivity"
+            android:theme="@style/Theme.TransBankApp.NoActionBar"/>
+        <activity
+            android:name=".movielist.MovieListActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.TransBankApp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
